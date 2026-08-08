@@ -18,8 +18,11 @@ export const ProofDashboardSection: React.FC<ProofDashboardSectionProps> = ({
   onNavigateContact
 }) => {
   const handleDownloadResume = () => {
-    // If user has a real PDF asset or trigger mailto/print
-    window.open(`mailto:${profileData.email}?subject=Requesting%20PDF%20Resume%20-%20DEV%20BY%20SABARI%20M`, '_blank');
+    if (profileData.resumeUrl) {
+      window.open(profileData.resumeUrl, '_blank');
+    } else {
+      window.open(`mailto:${profileData.email}?subject=Requesting%20PDF%20Resume%20-%20DEV%20BY%20SABARI%20M`, '_blank');
+    }
   };
 
   return (
