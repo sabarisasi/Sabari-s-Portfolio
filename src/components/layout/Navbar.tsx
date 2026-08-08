@@ -63,23 +63,24 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'py-2.5 glass-panel border-b border-slate-800/80 shadow-2xl shadow-slate-950/80' : 'py-4 bg-transparent'
+      isScrolled ? 'py-2.5 glass-panel border-b border-slate-800/80 shadow-2xl shadow-slate-950/80' : 'py-3 sm:py-4 bg-transparent'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-2">
+      <div className="max-w-7xl mx-auto px-2.5 min-[360px]:px-3.5 sm:px-6 lg:px-8 pl-[max(0.625rem,env(safe-area-inset-left))] pr-[max(0.625rem,env(safe-area-inset-right))]">
+        <div className="flex items-center justify-between gap-1 min-[360px]:gap-1.5 sm:gap-2 w-full min-w-0">
           
           {/* Logo Brand */}
           <button 
             onClick={() => handleLinkClick('home')}
-            className="flex items-center gap-2.5 group text-left focus:outline-none shrink-0"
+            className="flex items-center gap-1.5 sm:gap-2.5 group text-left focus:outline-none min-w-0 shrink"
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 p-[1px] shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-all overflow-hidden">
-              <div className="w-full h-full bg-slate-950 rounded-[11px] flex items-center justify-center text-blue-400 font-heading font-extrabold text-lg group-hover:text-white transition-colors overflow-hidden">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 p-[1px] shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-all overflow-hidden shrink-0">
+              <div className="w-full h-full bg-slate-950 rounded-[11px] flex items-center justify-center text-blue-400 font-heading font-extrabold text-base sm:text-lg group-hover:text-white transition-colors overflow-hidden">
                 {profileData.avatarUrl ? (
                   <img
                     src={profileData.avatarUrl}
                     alt="Sabari M"
                     className="w-full h-full object-cover object-top"
+                    referrerPolicy="no-referrer"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = "/profile.svg";
                     }}
@@ -89,8 +90,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                 )}
               </div>
             </div>
-            <div>
-              <span className="font-heading font-extrabold text-base md:text-lg tracking-tight text-slate-100 dark:text-white group-hover:text-blue-400 transition-colors whitespace-nowrap">
+            <div className="min-w-0 flex-1">
+              <span className="font-heading font-extrabold text-xs min-[360px]:text-sm sm:text-base md:text-lg tracking-tight text-slate-100 dark:text-white group-hover:text-blue-400 transition-colors whitespace-nowrap truncate block">
                 DEV BY SABARI M
               </span>
             </div>
@@ -143,28 +144,28 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Mobile Actions & Menu Toggle */}
-          <div className="flex lg:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-1 min-[360px]:gap-1.5 sm:gap-2 shrink-0">
             <button
               onClick={onOpenCommandPalette}
-              className="p-2 rounded-xl glass-panel text-slate-300 hover:text-white"
+              className="p-1.5 min-[360px]:p-2 rounded-xl glass-panel text-slate-300 hover:text-white shrink-0"
               aria-label="Search"
             >
-              <Search className="w-5 h-5 text-blue-400" />
+              <Search className="w-4 h-4 min-[360px]:w-5 min-[360px]:h-5 text-blue-400" />
             </button>
 
             <button
               onClick={() => handleLinkClick('contact')}
-              className="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-mono font-bold shadow-md shadow-blue-600/20 uppercase"
+              className="px-2 py-1 min-[360px]:px-2.5 min-[360px]:py-1.5 sm:px-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-[10px] min-[360px]:text-xs font-mono font-bold shadow-md shadow-blue-600/20 uppercase whitespace-nowrap shrink-0 transition-all active:scale-95"
             >
               HIRE ME
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl glass-panel text-slate-300 hover:text-white border border-slate-800 focus:outline-none"
+              className="p-1.5 min-[360px]:p-2 rounded-xl glass-panel text-slate-300 hover:text-white border border-slate-800 focus:outline-none shrink-0"
               aria-label="Toggle mobile menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-4 h-4 min-[360px]:w-5 min-[360px]:h-5" /> : <Menu className="w-4 h-4 min-[360px]:w-5 min-[360px]:h-5" />}
             </button>
           </div>
 
@@ -173,7 +174,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[60px] bg-slate-950/95 backdrop-blur-2xl border-b border-slate-800 p-6 shadow-2xl transition-all animate-in fade-in slide-in-from-top-4 duration-200 z-50">
+        <div className="lg:hidden fixed inset-x-0 top-[56px] sm:top-[60px] bg-slate-950/95 backdrop-blur-2xl border-b border-slate-800 p-4 sm:p-6 shadow-2xl transition-all animate-in fade-in slide-in-from-top-4 duration-200 z-50 max-h-[calc(100vh-70px)] overflow-y-auto">
           <div className="mb-4 pb-4 border-b border-slate-800/80">
             <AvailabilityBadge className="w-full justify-center" />
           </div>
@@ -183,25 +184,25 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 key={link.id}
                 onClick={() => handleLinkClick(link.id)}
-                className={`flex items-center gap-2.5 p-3 rounded-xl text-xs font-medium transition-colors text-left ${
+                className={`flex items-center gap-2.5 p-2.5 sm:p-3 rounded-xl text-xs font-medium transition-colors text-left ${
                   activeSection === link.id
                     ? 'bg-blue-600/20 text-blue-300 border border-blue-500/30 font-semibold'
                     : 'text-slate-300 hover:bg-slate-900'
                 }`}
               >
-                <link.icon className="w-4 h-4 text-blue-400" />
-                <span>{link.label}</span>
+                <link.icon className="w-4 h-4 text-blue-400 shrink-0" />
+                <span className="truncate">{link.label}</span>
               </button>
             ))}
           </div>
 
-          <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-3">
+          <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2 sm:gap-3">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 if (onOpenCommandPalette) onOpenCommandPalette();
               }}
-              className="flex-1 py-3 rounded-xl glass-panel text-slate-300 flex items-center justify-center gap-2 text-xs font-mono font-bold"
+              className="flex-1 py-2.5 sm:py-3 rounded-xl glass-panel text-slate-300 flex items-center justify-center gap-2 text-xs font-mono font-bold"
             >
               <Search className="w-4 h-4 text-blue-400" />
               <span>SEARCH</span>
@@ -209,7 +210,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => handleLinkClick('contact')}
-              className="flex-1 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-mono font-bold text-center uppercase tracking-wider shadow-lg shadow-blue-600/25"
+              className="flex-1 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-mono font-bold text-center uppercase tracking-wider shadow-lg shadow-blue-600/25"
             >
               HIRE ME
             </button>

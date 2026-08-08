@@ -42,6 +42,7 @@ export const ResumePage: React.FC = () => {
                     src={profileData.avatarUrl}
                     alt={profileData.name}
                     className="w-full h-full object-cover object-top"
+                    referrerPolicy="no-referrer"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = "/profile.svg";
                     }}

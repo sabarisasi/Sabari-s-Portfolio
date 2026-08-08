@@ -277,6 +277,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     src={profileData.avatarUrl}
                     alt="Sabari M - DEV BY SABARI M Profile"
                     className="w-full h-full object-cover object-top transform group-hover/img:scale-105 transition-transform duration-700"
+                    referrerPolicy="no-referrer"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = "/profile.svg";
                     }}
