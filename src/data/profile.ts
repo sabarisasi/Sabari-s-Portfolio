@@ -12,7 +12,8 @@ export const profileData: Profile = {
     "AI Application Builder",
     "Digital Product Builder"
   ],
-  avatarUrl: "/profile.svg",
+  avatarUrl: "/profile.png",
+  resumeUrl: "/resume.pdf",
   slogan: "From idea to launch — websites, apps and digital products built faster with AI-powered no-code development.",
   secondaryPositioning: "Full-Time • Part-Time • Freelance",
   supportingMessage: "I turn ideas into websites, applications, business software and AI-powered digital products using advanced AI-assisted and no-code development workflows.",
