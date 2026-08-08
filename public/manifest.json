@@ -1,0 +1,15 @@
+{
+  "short_name": "SABARI M",
+  "name": "DEV BY SABARI M — AI & No-Code Developer Portfolio",
+  "icons": [
+    {
+      "src": "/profile.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#030712",
+  "theme_color": "#030712",
+  "display": "standalone"
+}

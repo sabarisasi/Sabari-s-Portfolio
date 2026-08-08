@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b89b72"/>
+      <stop offset="50%" stop-color="#a38258"/>
+      <stop offset="100%" stop-color="#8c6d45"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5eee3"/>
+      <stop offset="100%" stop-color="#e2d2ba"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#aa7a53"/>
+      <stop offset="100%" stop-color="#8d5f3a"/>
+    </linearGradient>
+    <linearGradient id="glasses" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background Warm Wall -->
+  <rect width="600" height="800" fill="url(#bg)"/>
+  
+  <!-- Subtle Wall Texture lines -->
+  <path d="M0 240 L600 240 M0 520 L600 520" stroke="#7a5d37" stroke-width="2" opacity="0.4"/>
+
+  <!-- Body & Shirt -->
+  <g filter="url(#shadow)">
+    <!-- Shoulders / Beige Linen Shirt -->
+    <path d="M 120 800 C 120 500, 180 380, 270 330 C 290 320, 310 320, 330 330 C 420 380, 480 500, 480 800 Z" fill="url(#shirt)"/>
+    
+    <!-- Open Shirt Collar V & Black Buttons -->
+    <path d="M 270 330 L 300 450 L 330 330 Z" fill="#d8c5aa"/>
+    <path d="M 300 330 L 300 750" stroke="#a38f72" stroke-width="2"/>
+    
+    <!-- Black Buttons on Shirt -->
+    <circle cx="300" cy="380" r="7" fill="#111827"/>
+    <circle cx="300" cy="450" r="7" fill="#111827"/>
+    <circle cx="300" cy="520" r="7" fill="#111827"/>
+    <circle cx="300" cy="590" r="7" fill="#111827"/>
+    <circle cx="300" cy="660" r="7" fill="#111827"/>
+    
+    <!-- Neck -->
+    <path d="M 260 300 C 260 360, 340 360, 340 300 Z" fill="url(#skin)"/>
+    
+    <!-- Head & Jaw -->
+    <path d="M 220 180 C 220 300, 380 300, 380 180 C 380 100, 220 100, 220 180 Z" fill="url(#skin)"/>
+    
+    <!-- Beard & Mustache (Dark Groomed Trim) -->
+    <path d="M 230 220 C 230 290, 370 290, 370 220 C 360 310, 240 310, 230 220 Z" fill="#181311"/>
+    <!-- Mustache -->
+    <path d="M 260 235 Q 300 245 340 235 Q 300 225 260 235 Z" fill="#181311"/>
+
+    <!-- Textured Voluminous Dark Hair -->
+    <path d="M 200 160 C 190 60, 250 10, 300 10 C 350 10, 410 60, 400 160 C 380 110, 350 70, 300 70 C 250 70, 220 110, 200 160 Z" fill="#120e0c"/>
+    <path d="M 210 140 Q 230 40 300 30 Q 370 40 390 140 Q 350 80 300 80 Q 250 80 210 140 Z" fill="#241b17"/>
+
+    <!-- Stylish Black Sunglasses -->
+    <g>
+      <!-- Frame -->
+      <rect x="225" y="160" width="65" height="42" rx="10" fill="url(#glasses)" stroke="#374151" stroke-width="3"/>
+      <rect x="310" y="160" width="65" height="42" rx="10" fill="url(#glasses)" stroke="#374151" stroke-width="3"/>
+      <!-- Bridge -->
+      <rect x="290" y="168" width="20" height="6" fill="#1f2937"/>
+      <!-- Glare Effect -->
+      <polygon points="235,165 265,165 245,198 235,198" fill="#ffffff" opacity="0.15"/>
+      <polygon points="320,165 350,165 330,198 320,198" fill="#ffffff" opacity="0.15"/>
+    </g>
+
+    <!-- Name Label Overlay -->
+    <rect x="180" y="720" width="240" height="40" rx="12" fill="#090d16" opacity="0.9" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="300" y="746" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16" fill="#ffffff" text-anchor="middle" letter-spacing="2">SABARI M</text>
+  </g>
+</svg>
