@@ -134,12 +134,12 @@ export default function AIHealthCompanionApp() {
     images: [
       "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop"
     ],
-    githubUrl: "https://github.com/sabari-m/finpilot-ai",
-    liveUrl: undefined,
+    githubUrl: "https://github.com/sabarisasi/FinPilot-AI",
+    liveUrl: "https://finpilot-ai-9280.ai.studio",
     featured: true,
     timeline: "Completed (2025)",
     sourceAvailable: true,
-    livePreviewAvailable: false,
+    livePreviewAvailable: true,
     architecture: {
       overview: "Full-stack financial workspace powered by Node.js, Express, Gemini LLM prompt pipelines, and Supabase PostgreSQL persistence.",
       nodes: [
@@ -563,12 +563,12 @@ CREATE POLICY "Users can manage own transactions" ON public.transactions FOR ALL
     images: [
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop"
     ],
-    githubUrl: "https://github.com/sabari-m/recruitgpt-pro",
-    liveUrl: undefined,
+    githubUrl: "https://github.com/sabarisasi/RecruitGPT-Pro",
+    liveUrl: "https://recruitgpt-pro-333155634562.asia-southeast1.run.app",
     featured: false,
     timeline: "Completed (2025)",
     sourceAvailable: true,
-    livePreviewAvailable: false,
+    livePreviewAvailable: true,
     architecture: {
       overview: "Full-stack AI career platform built on React, Supabase PostgreSQL with RLS, and Gemini structured prompt analysis engines.",
       nodes: [
@@ -1242,12 +1242,12 @@ CREATE POLICY "Users can manage own applications" ON public.job_applications FOR
     images: [
       "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop"
     ],
-    githubUrl: "https://github.com/sabari-m/promptflow-studio",
-    liveUrl: undefined,
+    githubUrl: "https://github.com/sabarisasi/PromptFlow-Studio",
+    liveUrl: "https://genesis-portfolio-pp6zq92mh-praveenkumaru691-1567s-projects.vercel.app",
     featured: false,
     timeline: "Completed (2026)",
     sourceAvailable: true,
-    livePreviewAvailable: false,
+    livePreviewAvailable: true,
     architecture: {
       overview: "Full-stack prompt management platform using Node.js backend streams, Supabase PostgreSQL with RLS, and Gemini structured evaluation pipelines.",
       nodes: [
@@ -1707,12 +1707,12 @@ CREATE POLICY "Users can manage own prompts" ON public.prompts FOR ALL USING (au
     images: [
       "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1200&auto=format&fit=crop"
     ],
-    githubUrl: "https://github.com/sabari-m/ShreeLakshmiTraders-Billing",
-    liveUrl: undefined,
+    githubUrl: "https://github.com/sabarisasi/Shree-Lakshmi-Traders-GST-Billing",
+    liveUrl: "https://genesis-portfolio-k4q6u7tqa-praveenkumaru691-1567s-projects.vercel.app",
     featured: true,
     timeline: "Completed (2026)",
     sourceAvailable: true,
-    livePreviewAvailable: false,
+    livePreviewAvailable: true,
     architecture: {
       overview: "Full-stack client management SPA built with React and Tailwind, synchronized with a Supabase PostgreSQL transactional database.",
       nodes: [
@@ -2114,12 +2114,12 @@ ALTER TABLE public.products ENABLE ROW LEVEL SECURITY;
     images: [
       "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop"
     ],
-    githubUrl: "https://github.com/sabari-m/Inventory-Management-System",
-    liveUrl: undefined,
+    githubUrl: "https://github.com/sabarisasi/Inventory-Management-System",
+    liveUrl: "https://genesis-portfolio-99diyduar-praveenkumaru691-1567s-projects.vercel.app",
     featured: true,
     timeline: "Completed (2026)",
     sourceAvailable: true,
-    livePreviewAvailable: false,
+    livePreviewAvailable: true,
     architecture: {
       overview: "Full-stack inventory system built with React, Tailwind CSS, Node.js, and Supabase PostgreSQL transactional database.",
       nodes: [
@@ -2501,12 +2501,12 @@ ALTER TABLE public.products ENABLE ROW LEVEL SECURITY;
     images: [
       "https://images.unsplash.com/photo-1677442136019-21780efad99a?q=80&w=1200&auto=format&fit=crop"
     ],
-    githubUrl: "https://github.com/sabari-m/AI-Chatbot-Platform",
-    liveUrl: undefined,
+    githubUrl: "https://github.com/sabarisasi/AI-Chatbot-Platform",
+    liveUrl: "https://genesis-portfolio-julspre06-praveenkumaru691-1567s-projects.vercel.app",
     featured: true,
     timeline: "Completed (2026)",
     sourceAvailable: true,
-    livePreviewAvailable: false,
+    livePreviewAvailable: true,
     architecture: {
       overview: "Full-stack AI SaaS platform utilizing client-side React UI, backend streaming via Gemini API, and Supabase RLS tables for thread and document storage.",
       nodes: [
@@ -2894,12 +2894,12 @@ ALTER TABLE public.conversations ENABLE ROW LEVEL SECURITY;
     images: [
       "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1200&auto=format&fit=crop"
     ],
-    githubUrl: "https://github.com/sabari-m/Hospital-Management-System",
-    liveUrl: undefined,
+    githubUrl: "https://github.com/sabarisasi/Hospital-Management-System",
+    liveUrl: "https://genesis-portfolio-lijp7j97r-praveenkumaru691-1567s-projects.vercel.app",
     featured: true,
     timeline: "Completed (2026)",
     sourceAvailable: true,
-    livePreviewAvailable: false,
+    livePreviewAvailable: true,
     architecture: {
       overview: "Clinical SaaS architecture with role-based React UI, Express healthcare service layers, and Supabase PostgreSQL with strict patient privacy RLS.",
       nodes: [
@@ -3292,12 +3292,12 @@ ALTER TABLE public.appointments ENABLE ROW LEVEL SECURITY;
     images: [
       "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1200&auto=format&fit=crop"
     ],
-    githubUrl: "https://github.com/sabari-m/Modern-Ecommerce-Platform",
-    liveUrl: undefined,
+    githubUrl: "https://github.com/sabarisasi/Modern-Ecommerce-Platform",
+    liveUrl: "https://genesis-portfolio-90j2u362t-praveenkumaru691-1567s-projects.vercel.app",
     featured: true,
     timeline: "Completed (2026)",
     sourceAvailable: true,
-    livePreviewAvailable: false,
+    livePreviewAvailable: true,
     architecture: {
       overview: "Full-stack e-commerce architecture with React frontend, Express order fulfillment endpoints, and Supabase PostgreSQL relational database.",
       nodes: [
@@ -3628,12 +3628,12 @@ ALTER TABLE public.orders ENABLE ROW LEVEL SECURITY;
     images: [
       "https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=1200&auto=format&fit=crop"
     ],
-    githubUrl: "https://github.com/sabari-m/AI-Document-Analyzer",
-    liveUrl: undefined,
+    githubUrl: "https://github.com/sabarisasi/AI-Document-Analyzer",
+    liveUrl: "https://genesis-portfolio-pw3hid2kj-praveenkumaru691-1567s-projects.vercel.app",
     featured: true,
     timeline: "Completed (2026)",
     sourceAvailable: true,
-    livePreviewAvailable: false,
+    livePreviewAvailable: true,
     architecture: {
       overview: "Document processing pipeline using browser text extraction, Gemini multi-modal processing, and Supabase vector store for document indexing.",
       nodes: [
