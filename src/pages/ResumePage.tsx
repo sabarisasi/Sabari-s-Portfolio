@@ -20,13 +20,24 @@ export const ResumePage: React.FC = () => {
           <p className="text-sm font-mono text-blue-400">{profileData.title}</p>
         </div>
 
-        <a
-          href={`mailto:${profileData.email}?subject=Requesting%20PDF%20Resume%20-%20DEV%20BY%20SABARI%20M`}
-          className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-xs md:text-sm shadow-xl shadow-blue-600/25 border border-blue-400/30 flex items-center gap-2 transition-all"
-        >
-          <Download className="w-4 h-4" />
-          <span>Request PDF Version</span>
-        </a>
+        {profileData.resumeUrl ? (
+          <a
+            href={profileData.resumeUrl}
+            download
+            className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-xs md:text-sm shadow-xl shadow-blue-600/25 border border-blue-400/30 flex items-center gap-2 transition-all"
+          >
+            <Download className="w-4 h-4" />
+            <span>Download PDF Resume</span>
+          </a>
+        ) : (
+          <a
+            href={`mailto:${profileData.email}?subject=Requesting%20PDF%20Resume%20-%20DEV%20BY%20SABARI%20M`}
+            className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-xs md:text-sm shadow-xl shadow-blue-600/25 border border-blue-400/30 flex items-center gap-2 transition-all"
+          >
+            <Download className="w-4 h-4" />
+            <span>Request PDF Version</span>
+          </a>
+        )}
       </GlassCard>
 
       {/* Resume Document Wrapper */}
