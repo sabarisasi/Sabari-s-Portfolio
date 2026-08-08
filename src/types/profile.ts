@@ -26,6 +26,7 @@ export interface Profile {
   title: string;
   rotatableTitles: string[];
   avatarUrl?: string;
+  resumeUrl?: string;
   slogan: string;
   secondaryPositioning: string;
   supportingMessage: string;
