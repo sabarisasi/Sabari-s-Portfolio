@@ -65,7 +65,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) =
               <span>3. Data Retention & Access Control</span>
             </div>
             <p>
-              Submissions stored securely in Supabase are protected by Row-Level Security (RLS) policies. Anonymous public users cannot read or search submitted messages. Only authorized portfolio administration channels possess access.
+              Submissions are sent through a private, server-side Google Apps Script Web App and stored in a Google Sheet accessible only to the portfolio owner's Google account. No public or anonymous users can read, search, or access submitted enquiries.
             </p>
           </div>
 
