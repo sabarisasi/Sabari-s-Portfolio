@@ -2499,7 +2499,7 @@ ALTER TABLE public.products ENABLE ROW LEVEL SECURITY;
       "Supabase PostgreSQL Relational Storage with Row Level Security (RLS)"
     ],
     images: [
-      "https://unsplash.com/photos/a-white-robot-with-blue-eyes-and-a-laptop--0xMiYQmk8g"
+      "https://www.pexels.com/photo/webpage-of-ai-chatbot-a-prototype-ai-smith-open-chatbot-is-seen-on-the-website-of-openai-on-a-apple-smartphone-examples-capabilities-and-limitations-are-shown-16380906/"
     ],
     githubUrl: "https://github.com/sabarisasi/AI-Chatbot-Platform",
     liveUrl: "https://ai-chatbot-platform-ruby.vercel.app/",
