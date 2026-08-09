@@ -6,7 +6,7 @@ import {
 import { profileData } from '../../data/profile';
 import { GlassCard } from '../ui/GlassCard';
 import { Button } from '../ui/Button';
-import { submitContactInquiry, ContactMessageInput } from '../../lib/supabase';
+import { submitContactInquiry, ContactMessageInput } from '../../lib/googleSheetsEnquiry';
 
 interface ContactSectionProps {
   preselectedProjectType?: string;
@@ -88,6 +88,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Prevent duplicate submissions while a request is already in flight
+    if (isSubmitting) return;
 
     // Honeypot check
     if (honeypot) {
@@ -591,7 +594,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   {submitError && (
                     <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono flex items-center gap-2">
                       <AlertCircle className="w-4 h-4 text-amber-400 shrink-0" />
-                      <span>Online form encounter. You can also send a direct email to {profileData.email}.</span>
+                      <span>Something went wrong while sending your enquiry. Please try again, or email me directly at {profileData.email}.</span>
                     </div>
                   )}
 
