@@ -6,7 +6,7 @@ import {
 import { profileData } from '../../data/profile';
 import { GlassCard } from '../ui/GlassCard';
 import { Button } from '../ui/Button';
-import { submitContactInquiry, ContactMessageInput } from '../../lib/googleSheetsEnquiry';
+import { submitContactInquiry, ContactMessageInput } from '../../lib/enquiry';
 
 interface ContactSectionProps {
   preselectedProjectType?: string;
