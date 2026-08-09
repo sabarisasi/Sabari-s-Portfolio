@@ -1,6 +1,6 @@
 /**
- * DEV BY SABARI M — Hiring / Project Enquiry Backend
- * ---------------------------------------------------
+ * DEV BY SABARI M - Hiring / Project Enquiry Backend
+ * ----------------------------------------------------
  * This script runs entirely on Google's servers (Apps Script), NOT in the
  * portfolio frontend. It receives enquiry submissions as JSON POST requests,
  * appends each one as a new row in a Google Sheet, and emails a notification.
@@ -12,21 +12,21 @@
  * SETUP (also see GOOGLE_APPS_SCRIPT_SETUP.md for full step-by-step):
  *   1. Set NOTIFICATION_EMAIL below to your professional email address.
  *   2. Deploy as a Web App (Execute as: Me, Who has access: Anyone).
- *   3. Copy the /exec URL into VITE_GOOGLE_APPS_SCRIPT_URL in the portfolio's .env
+ *   3. Copy the /exec URL into VITE_GOOGLE_APPS_SCRIPT_URL in the portfolio env config.
  */
 
-// ─────────────────────────────────────────────────────────────────────────
+// ---------------------------------------------------------------------------
 // CONFIGURATION
-// ─────────────────────────────────────────────────────────────────────────
+// ---------------------------------------------------------------------------
 
-/** Where the "New Project Enquiry" notification email is sent. */
-const NOTIFICATION_EMAIL = 'sabari.sasi@zohomail.in'; // <-- change if needed
+// Where the "New Project Enquiry" notification email is sent.
+var NOTIFICATION_EMAIL = 'sabari.sasi@zohomail.in'; // <-- change if needed
 
-/** Name of the sheet/tab enquiries are written to. Created automatically if missing. */
-const SHEET_NAME = 'Enquiries';
+// Name of the sheet/tab enquiries are written to. Created automatically if missing.
+var SHEET_NAME = 'Enquiries';
 
-/** Exact column order for the Google Sheet. The header row is auto-created. */
-const COLUMNS = [
+// Exact column order for the Google Sheet. The header row is auto-created.
+var COLUMNS = [
   'Timestamp',
   'Name',
   'Email',
@@ -39,17 +39,17 @@ const COLUMNS = [
   'Budget Range',
   'Target Timeline',
   'Status',
-  'Preferred Contact' // extra column so no field from the form is ever lost
+  'Preferred Contact'
 ];
 
-/** Fields the frontend must send. Matches the hiring form's required (*) fields. */
-const REQUIRED_FIELDS = ['name', 'email', 'projectType', 'projectDescription', 'engagementType'];
+// Fields the frontend must send. Matches the hiring form's required fields.
+var REQUIRED_FIELDS = ['name', 'email', 'projectType', 'projectDescription', 'engagementType'];
 
-const VALID_STATUSES = ['New', 'Contacted', 'In Discussion', 'Proposal Sent', 'Converted', 'Closed'];
+var VALID_STATUSES = ['New', 'Contacted', 'In Discussion', 'Proposal Sent', 'Converted', 'Closed'];
 
-// ─────────────────────────────────────────────────────────────────────────
+// ---------------------------------------------------------------------------
 // ENTRY POINT
-// ─────────────────────────────────────────────────────────────────────────
+// ---------------------------------------------------------------------------
 
 function doPost(e) {
   try {
@@ -69,7 +69,7 @@ function doPost(e) {
       return jsonResponse({ success: false, error: 'Unable to save enquiry' });
     }
 
-    // Email failure must NOT undo a successfully saved enquiry — handled
+    // Email failure must NOT undo a successfully saved enquiry - handled
     // independently and only logged, never thrown back to the client.
     try {
       sendNotificationEmail(savedRow);
@@ -84,14 +84,14 @@ function doPost(e) {
   }
 }
 
-/** Simple health check so you can confirm the deployment URL works from a browser. */
+// Simple health check so you can confirm the deployment URL works from a browser.
 function doGet() {
   return jsonResponse({ success: true, message: 'Enquiry endpoint is live. Use POST to submit.' });
 }
 
-// ─────────────────────────────────────────────────────────────────────────
+// ---------------------------------------------------------------------------
 // VALIDATION
-// ─────────────────────────────────────────────────────────────────────────
+// ---------------------------------------------------------------------------
 
 function validateEnquiry(data) {
   if (!data || typeof data !== 'object') {
@@ -113,14 +113,12 @@ function validateEnquiry(data) {
   return null; // valid
 }
 
-// ─────────────────────────────────────────────────────────────────────────
+// ---------------------------------------------------------------------------
 // GOOGLE SHEET STORAGE
-// ─────────────────────────────────────────────────────────────────────────
+// ---------------------------------------------------------------------------
 
-/**
- * Appends one new row for the enquiry. Uses a lock so concurrent submissions
- * never overwrite each other. Returns the row's data (as saved) or null on failure.
- */
+// Appends one new row for the enquiry. Uses a lock so concurrent submissions
+// never overwrite each other. Returns the row's data (as saved) or null on failure.
 function saveEnquiryToSheet(data) {
   var lock = LockService.getScriptLock();
   lock.waitLock(30000); // wait up to 30s for other concurrent submissions
@@ -148,7 +146,7 @@ function saveEnquiryToSheet(data) {
       String(data.preferredContact || '').trim()
     ];
 
-    sheet.appendRow(rowValues); // always adds a NEW row — never overwrites
+    sheet.appendRow(rowValues); // always adds a NEW row - never overwrites
 
     return {
       timestamp: timestamp,
@@ -173,21 +171,26 @@ function saveEnquiryToSheet(data) {
   }
 }
 
-/** Gets the target sheet/tab, creating it if the spreadsheet doesn't have it yet. */
+// Gets the target sheet/tab, creating it if the spreadsheet doesn't have it yet.
 function getOrCreateSheet() {
   var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = spreadsheet.getSheetByName(SHEET_NAME);
 
   if (!sheet) {
-    sheet = spreadsheet.getSheets()[0].getName() === 'Sheet1' && spreadsheet.getSheets().length === 1
-      ? spreadsheet.getSheets()[0].setName(SHEET_NAME) // reuse the default blank "Sheet1"
-      : spreadsheet.insertSheet(SHEET_NAME);
+    var sheets = spreadsheet.getSheets();
+    if (sheets.length === 1 && sheets[0].getName() === 'Sheet1') {
+      // Reuse the default blank "Sheet1" instead of leaving it empty and unused.
+      sheet = sheets[0];
+      sheet.setName(SHEET_NAME);
+    } else {
+      sheet = spreadsheet.insertSheet(SHEET_NAME);
+    }
   }
 
   return sheet;
 }
 
-/** Creates the header row automatically if the sheet is empty or headers are missing. */
+// Creates the header row automatically if the sheet is empty or headers are missing.
 function ensureHeaderRow(sheet) {
   var firstRow = sheet.getRange(1, 1, 1, COLUMNS.length).getValues()[0];
   var hasHeaders = firstRow.join('') !== '';
@@ -200,12 +203,12 @@ function ensureHeaderRow(sheet) {
   }
 }
 
-// ─────────────────────────────────────────────────────────────────────────
+// ---------------------------------------------------------------------------
 // EMAIL NOTIFICATION
-// ─────────────────────────────────────────────────────────────────────────
+// ---------------------------------------------------------------------------
 
 function sendNotificationEmail(row) {
-  var subject = 'New Project Enquiry — DEV BY SABARI M';
+  var subject = 'New Project Enquiry - DEV BY SABARI M';
 
   var body =
     'New Project Enquiry Received\n\n' +
@@ -226,9 +229,9 @@ function sendNotificationEmail(row) {
   MailApp.sendEmail(NOTIFICATION_EMAIL, subject, body);
 }
 
-// ─────────────────────────────────────────────────────────────────────────
+// ---------------------------------------------------------------------------
 // RESPONSE HELPER
-// ─────────────────────────────────────────────────────────────────────────
+// ---------------------------------------------------------------------------
 
 function jsonResponse(obj) {
   return ContentService
