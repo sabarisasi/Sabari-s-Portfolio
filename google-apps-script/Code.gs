@@ -1,19 +1,17 @@
-/**
- * DEV BY SABARI M - Hiring / Project Enquiry Backend
- * ----------------------------------------------------
- * This script runs entirely on Google's servers (Apps Script), NOT in the
- * portfolio frontend. It receives enquiry submissions as JSON POST requests,
- * appends each one as a new row in a Google Sheet, and emails a notification.
- *
- * Nothing in this file is ever sent to or bundled with the React app.
- * The only thing the frontend knows is the public Web App URL produced
- * when you deploy this script (see GOOGLE_APPS_SCRIPT_SETUP.md).
- *
- * SETUP (also see GOOGLE_APPS_SCRIPT_SETUP.md for full step-by-step):
- *   1. Set NOTIFICATION_EMAIL below to your professional email address.
- *   2. Deploy as a Web App (Execute as: Me, Who has access: Anyone).
- *   3. Copy the /exec URL into VITE_GOOGLE_APPS_SCRIPT_URL in the portfolio env config.
- */
+// DEV BY SABARI M - Hiring / Project Enquiry Backend
+// ----------------------------------------------------
+// This script runs entirely on Google's servers (Apps Script), NOT in the
+// portfolio frontend. It receives enquiry submissions as JSON POST requests,
+// appends each one as a new row in a Google Sheet, and emails a notification.
+//
+// Nothing in this file is ever sent to or bundled with the React app.
+// The only thing the frontend knows is the public Web App URL produced
+// when you deploy this script (see GOOGLE_APPS_SCRIPT_SETUP.md).
+//
+// SETUP (also see GOOGLE_APPS_SCRIPT_SETUP.md for full step-by-step):
+//   1. Set NOTIFICATION_EMAIL below to your professional email address.
+//   2. Deploy as a Web App (Execute as: Me, Who has access: Anyone).
+//   3. Copy the /exec URL into VITE_GOOGLE_APPS_SCRIPT_URL in the portfolio env config.
 
 // ---------------------------------------------------------------------------
 // CONFIGURATION
