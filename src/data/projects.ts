@@ -25,7 +25,7 @@ export const projectsData: Project[] = [
       "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1200&auto=format&fit=crop"
     ],
     githubUrl: "https://github.com/sabarisasi/AI-Health-Companion-Apk",
-    liveUrl: undefined, // Live demo coming soon
+    liveUrl: "https://drive.google.com/file/d/1YxFJVKZE2PcirPUBposQqh8dH1JqGMSu/view?usp=drivesdk",
     featured: true,
     timeline: "Jan 2026 – Present",
     sourceAvailable: true,
@@ -564,7 +564,7 @@ CREATE POLICY "Users can manage own transactions" ON public.transactions FOR ALL
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop"
     ],
     githubUrl: "https://github.com/sabarisasi/RecruitGPT-Pro",
-    liveUrl: "https://recruitgpt-pro-333155634562.asia-southeast1.run.app",
+    liveUrl: "https://recruit-gpt-pro.vercel.app/",
     featured: false,
     timeline: "Completed (2025)",
     sourceAvailable: true,
@@ -1243,7 +1243,7 @@ CREATE POLICY "Users can manage own applications" ON public.job_applications FOR
       "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop"
     ],
     githubUrl: "https://github.com/sabarisasi/PromptFlow-Studio",
-    liveUrl: "https://genesis-portfolio-pp6zq92mh-praveenkumaru691-1567s-projects.vercel.app",
+    liveUrl: "https://prompt-flow-studio-pi.vercel.app/",
     featured: false,
     timeline: "Completed (2026)",
     sourceAvailable: true,
@@ -1708,7 +1708,7 @@ CREATE POLICY "Users can manage own prompts" ON public.prompts FOR ALL USING (au
       "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1200&auto=format&fit=crop"
     ],
     githubUrl: "https://github.com/sabarisasi/Shree-Lakshmi-Traders-GST-Billing",
-    liveUrl: "https://genesis-portfolio-k4q6u7tqa-praveenkumaru691-1567s-projects.vercel.app",
+    liveUrl: "https://shree-lakshmi-traders-gst-billing.vercel.app/",
     featured: true,
     timeline: "Completed (2026)",
     sourceAvailable: true,
@@ -2115,7 +2115,7 @@ ALTER TABLE public.products ENABLE ROW LEVEL SECURITY;
       "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop"
     ],
     githubUrl: "https://github.com/sabarisasi/Inventory-Management-System",
-    liveUrl: "https://genesis-portfolio-99diyduar-praveenkumaru691-1567s-projects.vercel.app",
+    liveUrl: "https://inventory-management-system-lovat-phi.vercel.app/",
     featured: true,
     timeline: "Completed (2026)",
     sourceAvailable: true,
@@ -2502,7 +2502,7 @@ ALTER TABLE public.products ENABLE ROW LEVEL SECURITY;
       "https://images.unsplash.com/photo-1677442136019-21780efad99a?q=80&w=1200&auto=format&fit=crop"
     ],
     githubUrl: "https://github.com/sabarisasi/AI-Chatbot-Platform",
-    liveUrl: "https://genesis-portfolio-julspre06-praveenkumaru691-1567s-projects.vercel.app",
+    liveUrl: "https://ai-chatbot-platform-ruby.vercel.app/",
     featured: true,
     timeline: "Completed (2026)",
     sourceAvailable: true,
@@ -2895,7 +2895,7 @@ ALTER TABLE public.conversations ENABLE ROW LEVEL SECURITY;
       "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1200&auto=format&fit=crop"
     ],
     githubUrl: "https://github.com/sabarisasi/Hospital-Management-System",
-    liveUrl: "https://genesis-portfolio-lijp7j97r-praveenkumaru691-1567s-projects.vercel.app",
+    liveUrl: "https://hospital-management-system-lime-eta.vercel.app/",
     featured: true,
     timeline: "Completed (2026)",
     sourceAvailable: true,
@@ -3293,7 +3293,7 @@ ALTER TABLE public.appointments ENABLE ROW LEVEL SECURITY;
       "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1200&auto=format&fit=crop"
     ],
     githubUrl: "https://github.com/sabarisasi/Modern-Ecommerce-Platform",
-    liveUrl: "https://genesis-portfolio-90j2u362t-praveenkumaru691-1567s-projects.vercel.app",
+    liveUrl: "https://modern-ecommerce-platform-kappa.vercel.app/",
     featured: true,
     timeline: "Completed (2026)",
     sourceAvailable: true,
@@ -3629,7 +3629,7 @@ ALTER TABLE public.orders ENABLE ROW LEVEL SECURITY;
       "https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=1200&auto=format&fit=crop"
     ],
     githubUrl: "https://github.com/sabarisasi/AI-Document-Analyzer",
-    liveUrl: "https://genesis-portfolio-pw3hid2kj-praveenkumaru691-1567s-projects.vercel.app",
+    liveUrl: "https://ai-document-analyzer-rho.vercel.app/",
     featured: true,
     timeline: "Completed (2026)",
     sourceAvailable: true,
